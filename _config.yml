@@ -1,0 +1,11 @@
+title: "system35d"
+author:
+  name: "System35d"
+  email: "system35d@gmail.com"
+url: "https://system35d.umu.us"
+baseurl: ""
+
+exclude:
+  - LICENSE
+  - README.md
+  - CNAME
