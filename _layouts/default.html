@@ -8,10 +8,9 @@
     <script type="text/javascript" src="{{ site.baseurl }}/assets/script.js"></script>
   </head>
   <body>
-    <button type="button" class="btn btn-primary">Primary</button>
-    
     <div><a class="title" href="{{ site.baseurl }}/">{{ site.title }}</a></div>
+    <h1>{{ page.title }}</h1>
+    {% if page.date %}<div>{{ page.date | date_to_rfc822 }}</div>{% endif %}
     {{ content }}
-    
   </body>
 </html>
