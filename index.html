@@ -3,25 +3,30 @@ layout: "default"
 ---
 
 <div class="items">
-  {% for page in site.posts %}
+  {% for page in paginator.posts %}
   <div class="item">
-    <div class="item__title"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title | truncate: 25, "..." }}</a></div>
+    <div class="item__title"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title | truncate: 125, "..." }}</a></div>
     <div class="item__content">{{ page.content }}</div>
   </div>
   {% endfor %}
 </div>
 
+{% include pagination.html %}
+
+{% if paginator.page == 1 %}
+<hr />
+
 <div class="items">
   {% for page in site.pages %}
-
-  {% assign target = "/tmp/" %}
+  {% assign target = "/pages/" %}
   {% assign size = target | size %}
-  {% assign prefix = page.url | slice: 0, size%}
+  {% assign prefix = page.url | slice: 0, size %}
   {% if prefix == target %}
   <div class="item">
-    <div class="item__title"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title | truncate: 25, "..." }}</a></div>
+    <div class="item__title"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title | truncate: 125, "..." }}</a></div>
     <div class="item__content">{{ page.content }}</div>
   </div>
   {% endif %}
   {% endfor %}
 </div>
+{% endif %}

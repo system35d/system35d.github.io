@@ -1,9 +1,17 @@
+locale: "en-US"
 title: "system35d"
 author:
   name: "System35d"
   email: "system35d@gmail.com"
 url: "https://system35d.umu.us"
 baseurl: ""
+
+plugins:
+  - jekyll-paginate
+
+paginate: 2
+permalink: /:categories/:year-:month-:day-:title:output_ext
+paginate_path: /page:num/
 
 exclude:
   - LICENSE

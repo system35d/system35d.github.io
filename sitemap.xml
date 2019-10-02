@@ -1,0 +1,28 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% assign items = site.posts %}
+  {% for page in items %}
+  <url>
+    <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+    {% if page.date %}
+      <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+    {% else %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    {% endif %}
+  </url>
+  {% endfor %}
+
+  {% assign items = site.pages %}
+  {% for page in items %}
+  <url>
+    <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+    {% if page.date %}
+      <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+    {% else %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    {% endif %}
+  </url>
+  {% endfor %}
+</urlset> 
