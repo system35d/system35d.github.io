@@ -13,7 +13,7 @@ layout: "default"
 
 {% include pagination.html %}
 
-{% if paginator.page == 1 %}
+{% if paginator.page == nil or paginator.page == 1 %}
 <hr />
 
 <div class="items">
@@ -24,7 +24,6 @@ layout: "default"
   {% if prefix == target %}
   <div class="item">
     <div class="item__title"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title | truncate: 125, "..." }}</a></div>
-    <div class="item__content">{{ page.content }}</div>
   </div>
   {% endif %}
   {% endfor %}
